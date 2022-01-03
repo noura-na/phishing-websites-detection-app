@@ -1,1 +1,2 @@
-# software-engineering-project
+# Phishing Websites Detection
+**Software Engineering Course Project**
