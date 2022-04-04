@@ -534,7 +534,7 @@ def loginSys():
       st.success("You Have Successfully Created a Valid Account!")
       st.info("Go to Login Menu to Login")
 
-df = pd.read_csv("/home/n/Desktop/The Goal/SE-Project-mat/verified_phishing_sites.csv")
+df = pd.read_csv("verified_phishing_sites.csv")
 df.drop(df.index[6783], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
 model = pickle.load(open('/home/n/Desktop/The Goal/SE-Project-mat/model.sav', 'rb'))
@@ -548,7 +548,7 @@ def makePrediction(features, url):
   else:
     df.loc[len(df.index)] = url
     df_new = df.copy()
-    df_new.to_csv("/home/n/Desktop/The Goal/SE-Project-mat/verified_phishing_sites.csv", index = False)
+    df_new.to_csv("verified_phishing_sites.csv", index = False)
     output = "Phishing"
     st.warning(output)
   st.markdown('**Predicted Probability**')
