@@ -3,7 +3,7 @@ from urllib.parse import urlparse,urlencode
 import ipaddress
 import re
 from bs4 import BeautifulSoup
-import whois
+import python-whois
 import urllib.request
 import requests
 import socket
