@@ -1,8 +1,12 @@
+def  install(name):
+	subprocess.call(['pip','install', name])
 import streamlit as st
 from urllib.parse import urlparse,urlencode
 import ipaddress
 import re
 from bs4 import BeautifulSoup
+import subprocess
+install(whois)
 import whois
 import urllib.request
 import requests
