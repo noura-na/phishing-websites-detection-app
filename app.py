@@ -548,7 +548,7 @@ def makePrediction(features, url):
   else:
     df.loc[len(df.index)] = url
     df_new = df.copy()
-    df_new.to_csv("verified_phishing_sites.csv", index = False)
+    df_new.to_csv("verified_phishing_sites_updated.csv", index = False)
     output = "Phishing"
     st.warning(output)
   st.markdown('**Predicted Probability**')
