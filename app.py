@@ -1,4 +1,3 @@
-!pip install python-whois
 import streamlit as st
 from urllib.parse import urlparse,urlencode
 import ipaddress
