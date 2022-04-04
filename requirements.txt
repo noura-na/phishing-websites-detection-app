@@ -1,0 +1,4 @@
+whois==0.9.13
+
+googlesearch-python==1.1.0
+
