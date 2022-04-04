@@ -1,12 +1,9 @@
-def  install(name):
-	subprocess.call(['pip','install', name])
+!pip install python-whois
 import streamlit as st
 from urllib.parse import urlparse,urlencode
 import ipaddress
 import re
 from bs4 import BeautifulSoup
-import subprocess
-install(python-whois)
 import whois
 import urllib.request
 import requests
