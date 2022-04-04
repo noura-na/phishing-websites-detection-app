@@ -6,7 +6,7 @@ import ipaddress
 import re
 from bs4 import BeautifulSoup
 import subprocess
-install(whois)
+install(python-whois)
 import whois
 import urllib.request
 import requests
