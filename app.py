@@ -540,6 +540,7 @@ df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
 @st.cache
 def load_model():
+	urllib.urlretrieve("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav", "model.sav")
 	model = pickle.load(open('model.sav', 'rb'))
 	return model
 
