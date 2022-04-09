@@ -538,7 +538,7 @@ def loginSys():
 df = pd.read_csv("verified_phishing_sites.csv")
 df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
-modelurl = 'https://github.com/phishing-websites-detection-app/release/tag/model/model.sav'
+modelurl = 'https://github.com/phishing-websites-detection-app/releases/tag/model/model.sav'
 filename = modelurl.split('/')[-1]
 urllib.request.urlretrieve(modelurl, filename)
 #model = pickle.load(open('/home/n/Desktop/The Goal/SE-Project-mat/model.sav', 'rb'))
