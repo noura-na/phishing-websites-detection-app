@@ -535,7 +535,7 @@ def loginSys():
       st.info("Go to Login Menu to Login")
 
 df = pd.read_csv("verified_phishing_sites.csv")
-df.drop(df.index[6783], inplace = True)
+df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
 model = pickle.load(open('/home/n/Desktop/The Goal/SE-Project-mat/model.sav', 'rb'))
 
