@@ -541,7 +541,7 @@ df.drop(df.index[-1], inplace = True)
 modelurl = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/model/model.sav'
 filename = modelurl.split('/')[-1]
 urllib.request.urlretrieve(modelurl, filename)
-model = pickle.load(open(urllib.request.urlretrieve(modelurl, filename)', 'rb'))
+model = pickle.load(open(urllib.request.urlretrieve(modelurl, filename), 'rb'))
 
 def makePrediction(features, url):
   probability = model.predict_proba(features)
