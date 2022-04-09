@@ -16,6 +16,7 @@ from dateutil.parser import parse as date_parse
 import json
 import base64
 import csv
+import urllib.request
 import pandas as pd
 
 def diff_month(d1, d2):
@@ -537,7 +538,10 @@ def loginSys():
 df = pd.read_csv("verified_phishing_sites.csv")
 df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
-model = pickle.load(open('/home/n/Desktop/The Goal/SE-Project-mat/model.sav', 'rb'))
+modelurl = 'https://github.com/phishing-websites-detection-app/release/tag/model/model.sav'
+filename = url.split('/')[-1]
+model = urllib.request.urlretrieve(modelurl, filename)
+#model = pickle.load(open('/home/n/Desktop/The Goal/SE-Project-mat/model.sav', 'rb'))
 
 def makePrediction(features, url):
   probability = model.predict_proba(features)
