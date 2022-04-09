@@ -541,7 +541,7 @@ df.drop(df.index[-1], inplace = True)
 @st.cache
 def load_model():
 	with urllib.request.urlopen("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav") as res:
-	model = res.read()
+		model = res.read()
 	model = pickle.load(model)
 	return model
 
