@@ -39,7 +39,7 @@ def ExtractFeatures(url):
     domain = re.findall(r"://([^/]+)/?", url)[0]
     if re.match(r"^www.", domain):
         domain = domain.replace("www.", "")
-    whois_response = whois(domain)
+    whois_response = whois.whois(domain)
 
     rank_checker_response = requests.post("https://www.checkpagerank.net/index.php", {
         "name": domain
