@@ -538,10 +538,12 @@ def loginSys():
 df = pd.read_csv("verified_phishing_sites.csv")
 df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
-modelurl = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/model/model.sav'
-filename = modelurl.split('/')[-1]
-urllib.request.urlretrieve(modelurl, filename)
-model = pickle.load(open(urllib.request.urlretrieve(modelurl, filename), 'rb'))
+@st.cache
+def load_model():
+	model = pickle.load(open('model.sav', 'rb'))
+	return model
+
+model = load_model()
 
 def makePrediction(features, url):
   probability = model.predict_proba(features)
