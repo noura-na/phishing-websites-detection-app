@@ -548,16 +548,10 @@ df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
 @st.cache
 def load_model():
-	objects = []
-	with (open(filename, "rb")) as openfile:
-   		while True:
-        		try:
-            			objects.append(pickle.load(openfile))
-        		except EOFError:
-            			break
+	object = pd.read_pickle(r'filename')
 #  	with open("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav", 'rb') as res:
 # 	model = pickle.load(filename)
-	return objects
+	return object
 
 model = load_model()
 
