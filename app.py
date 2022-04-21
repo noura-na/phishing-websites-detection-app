@@ -564,7 +564,7 @@ def load_model(url):
 
 
 model = load_model("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")
-model = StringIO(model)
+model = BytesIO(model)
 
 
 def makePrediction(features, url):
