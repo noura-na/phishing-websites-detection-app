@@ -552,9 +552,10 @@ def load_model():
 # 	model = pickle.load(filename)
 
 	from urllib.request import urlopen
+	import gzip
 	import cloudpickle as cp
-
-	loaded_pickle_object = cp.load(urlopen("https://drive.google.com/file/d/1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")) 
+	#with gzip.open('test.pklz', 'rb') as ifp: #urlopen
+	loaded_pickle_object = cp.load(gzip("https://drive.google.com/file/d/1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")) 
 
 	return loaded_pickle_object
 
