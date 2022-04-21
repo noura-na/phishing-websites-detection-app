@@ -22,7 +22,6 @@ import pandas as pd
 import urllib.request
 
 url = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/model/download/model.sav'
-# #/data/releases/download/VacbagModelWeights/unet_vacbag_512_dsc_epoch_120.hdf5'
 # filename = url.split('/')[-1]
 
 # myfile = urllib.request.urlretrieve(url, filename)
@@ -555,7 +554,7 @@ def load_model():
 	from urllib.request import urlopen
 	import cloudpickle as cp
 
-	loaded_pickle_object = cp.load(urlopen("https://drive.google.com/file/d/1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH/view?usp=sharing", 'rb')) 
+	loaded_pickle_object = cp.load(urlopen("https://drive.google.com/file/d/1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH", 'rb')) 
 
 	return loaded_pickle_object
 
