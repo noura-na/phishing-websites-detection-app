@@ -554,7 +554,7 @@ def load_model():
         		try:
             			objects.append(pickle.load(openfile))
         		except EOFError:
-            		break
+            			break
 #  	with open("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav", 'rb') as res:
 # 	model = pickle.load(filename)
 	return objects
