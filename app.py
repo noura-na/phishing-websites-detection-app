@@ -555,7 +555,7 @@ def load_model():
 	import gzip
 	import cloudpickle as cp
 	#with gzip.open('test.pklz', 'rb') as ifp: #urlopen
-	loaded_pickle_object = cp.load(urlopen("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")) 
+	loaded_pickle_object = cp.load(gzip.open("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")) 
 
 	return loaded_pickle_object
 
