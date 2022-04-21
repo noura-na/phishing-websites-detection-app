@@ -553,6 +553,8 @@ def load_model():
 # 	model = pickle.load(filename)
 
 	from urllib.request import urlopen
+	import cloudpickle as cp
+
 	loaded_pickle_object = cp.load(urlopen("https://drive.google.com/file/d/1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH/view?usp=sharing", 'rb')) 
 
 	return loaded_pickle_object
