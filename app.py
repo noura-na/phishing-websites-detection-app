@@ -22,7 +22,7 @@ import pandas as pd
 import urllib.request
 
 url = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/model/download/model.sav'
-url2 = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/latest/download/model.sav.zip'
+url2 = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/model/latest/download/model.sav.zip'
 #/data/releases/download/VacbagModelWeights/unet_vacbag_512_dsc_epoch_120.hdf5'
 filename = url.split('/')[-1]
 
