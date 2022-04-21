@@ -559,8 +559,8 @@ def load_model(url):
 # 	loaded_pickle_object = cp.load(gzip.open("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")) 
 # 	return loaded_pickle_object
 #	modelLink = url
-   	model = requests.get(url).content
-    	return model
+	model = requests.get(url).content
+	return model
 
 
 model = load_model("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")
