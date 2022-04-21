@@ -2,3 +2,5 @@ python-whois==0.7.3
 
 googlesearch-python==1.1.0
 
+cloudpickle
+
