@@ -25,7 +25,7 @@ url = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/
 #/data/releases/download/VacbagModelWeights/unet_vacbag_512_dsc_epoch_120.hdf5'
 filename = url.split('/')[-1]
 
-urllib.request.urlretrieve(url, filename)
+myfile = urllib.request.urlretrieve(url, filename)
 
 def diff_month(d1, d2):
     return (d1.year - d2.year) * 12 + d1.month - d2.month
@@ -548,7 +548,7 @@ df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
 @st.cache
 def load_model():
-	object = pd.read_pickle(filename)
+	object = pd.read_pickle(myfile)
 #  	with open("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav", 'rb') as res:
 # 	model = pickle.load(filename)
 	return object
