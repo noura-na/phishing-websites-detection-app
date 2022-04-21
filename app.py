@@ -22,6 +22,7 @@ import pandas as pd
 import urllib.request
 
 url = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/model/download/model.sav'
+url2 = 'https://github.com/noura-na/phishing-websites-detection-app/releases/latest/download/model.sav.zip'
 #/data/releases/download/VacbagModelWeights/unet_vacbag_512_dsc_epoch_120.hdf5'
 filename = url.split('/')[-1]
 
@@ -548,7 +549,7 @@ df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
 @st.cache
 def load_model():
-	object = pd.read_pickle(url)
+	object = pd.read_pickle(url2)
 #  	with open("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav", 'rb') as res:
 # 	model = pickle.load(filename)
 	return object
