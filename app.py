@@ -545,7 +545,7 @@ def loginSys():
 df = pd.read_csv("verified_phishing_sites.csv")
 df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
-from io import BytesIO
+from io import BytesIO, StringIO
 
 @st.cache
 def load_model(url):
