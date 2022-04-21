@@ -19,6 +19,14 @@ import csv
 import urllib.request
 import pandas as pd
 
+import urllib.request
+
+url = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/download/model.sav
+#/data/releases/download/VacbagModelWeights/unet_vacbag_512_dsc_epoch_120.hdf5'
+filename = url.split('/')[-1]
+
+urllib.request.urlretrieve(url, filename)
+
 def diff_month(d1, d2):
     return (d1.year - d2.year) * 12 + d1.month - d2.month
 
@@ -541,7 +549,7 @@ df.drop(df.index[-1], inplace = True)
 @st.cache
 def load_model():
 # 	with open("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav", 'rb') as res:
-	model = pickle.load("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav", 'rb')
+	model = pickle.load(filename, 'rb')
 	return model
 
 model = load_model()
