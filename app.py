@@ -554,7 +554,7 @@ def load_model():
 	from urllib.request import urlopen
 	import cloudpickle as cp
 
-	loaded_pickle_object = cp.load(urlopen("https://drive.google.com/file/d/1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH", 'rb')) 
+	loaded_pickle_object = cp.load(urlopen("https://drive.google.com/file/d/1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")) 
 
 	return loaded_pickle_object
 
