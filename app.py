@@ -545,21 +545,27 @@ def loginSys():
 df = pd.read_csv("verified_phishing_sites.csv")
 df.drop(df.index[-1], inplace = True)
 #df.drop('0', axis =1 , inplace = True)
+from io import BytesIO
+
 @st.cache
-def load_model():
+def load_model(url):
 	#object = pd.read_pickle(url2)
 #  	with open("https://github.com/noura-na/phishing-websites-detection-app/releases/download/tag/model/model.sav", 'rb') as res:
 # 	model = pickle.load(filename)
+# 	from urllib.request import urlopen
+# 	import gzip
+# 	import cloudpickle as cp
+# 	#with gzip.open('test.pklz', 'rb') as ifp: #urlopen
+# 	loaded_pickle_object = cp.load(gzip.open("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")) 
+# 	return loaded_pickle_object
+	modelLink = url
+   	model = requests.get(modelLink).content
+    	return model
 
-	from urllib.request import urlopen
-	import gzip
-	import cloudpickle as cp
-	#with gzip.open('test.pklz', 'rb') as ifp: #urlopen
-	loaded_pickle_object = cp.load(gzip.open("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")) 
 
-	return loaded_pickle_object
+model = load_model("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")
+model = BytesIO(model)
 
-model = load_model()
 
 def makePrediction(features, url):
   probability = model.predict_proba(features)
