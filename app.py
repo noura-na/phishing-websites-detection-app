@@ -566,9 +566,14 @@ def load_model(url):
 model = load_model("https://drive.google.com/uc?export=download&id=1cKb_kPBnu8meKEmJy5ooux6sg5oQZwaH")
 model = BytesIO(model)
 
+def predict_prob(number):
+  return [number[0],1-number[0]]
+
 
 def makePrediction(features, url):
-  probability = model.predict_proba(features)
+	
+  #probability = np.array(list(map(predict_prob, model.predict(features)))) 
+  #probability = model.predict_proba(features)
   output = model.predict(features)
   if output[0] == 1:
     output = "Legitimate"
@@ -580,7 +585,7 @@ def makePrediction(features, url):
     output = "Phishing"
     st.warning(output)
   st.markdown('**Predicted Probability**')
-  st.bar_chart(probability)
+  #st.bar_chart(probability)
 
 def checkinDB(user_input):
     if df[df['url'].str.contains(user_input)].count()[0]:
