@@ -18,13 +18,8 @@ import base64
 import csv
 import urllib.request
 import pandas as pd
-
 import urllib.request
 
-url = 'https://github.com/noura-na/phishing-websites-detection-app/releases/tag/model/download/model.sav'
-# filename = url.split('/')[-1]
-
-# myfile = urllib.request.urlretrieve(url, filename)
 
 def diff_month(d1, d2):
     return (d1.year - d2.year) * 12 + d1.month - d2.month
